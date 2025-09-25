@@ -1,0 +1,16 @@
+.navbar {
+  background-color: var(--color-primary);
+  height: 74px;
+  width: 100vw;
+  padding: 0px 32px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  box-sizing: border-box;
+}
+:root {
+  --color-black: #000000;  /* black */
+  --color-white: #ffffff;  /* white */
+  --color-primary: #1db954; /* example primary color, like QTify green */
+}
+
