@@ -6,7 +6,18 @@
   align-items: center;
   text-align: center;
   gap: 30px;
+  
 }
+.hero h1 {
+  color: var(--color-white);
+  font-size: 32px;
+  margin: 0;
+} 
+.hero p {
+  color: var(--color-white);
+  font-size: 32px;
+  margin: 0;}
+
 :root {
   --color-black: #000000;  /* black */
   --color-white: #ffffff;  /* white */
