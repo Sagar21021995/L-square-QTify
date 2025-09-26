@@ -1,0 +1,35 @@
+.section {
+  margin: 40px 20px;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.header h2 {
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.collapseBtn {
+  background: transparent;
+  border: none;
+  color: var(--color-primary);
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 20px;
+}
+
+:root {
+  --color-black: #000000;  /* black */
+  --color-white: #ffffff;  /* white */
+  --color-primary: #1db954; /* example primary color, like QTify green */
+}

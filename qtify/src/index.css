@@ -4,7 +4,9 @@ body {
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
   -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  -moz-osx-font-smoothing: grayscale; 
+   background-color: var(--color-black);
+
 }
 *{
   font-family: 'Poppins', sans-serif;
@@ -13,4 +15,9 @@ body {
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+:root {
+  --color-black: #000000;  /* black */
+  --color-white: #ffffff;  /* white */
+  --color-primary: #1db954; /* example primary color, like QTify green */
 }
