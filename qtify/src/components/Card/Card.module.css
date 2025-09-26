@@ -2,17 +2,21 @@
   display: flex;
   flex-direction: column;
   border-radius: 8px;
-  overflow: hidden; /* ensures image stays inside card */
-  border: 1px solid #ddd;
-  width: 200px; /* adjust as per design */
-  background-color: var(--color-white);
-  /* color: white; */
-  font-family: 'Poppins', sans-serif;
+  overflow: hidden;
+  background-color: white;
+  width: 200px;
+  transition: all 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+  cursor: pointer;
 }
 
 .albumImage {
   width: 100%;
-  height: 250px; /* maintain proportion */
+  height: 250px;
   object-fit: cover;
 }
 
@@ -21,23 +25,15 @@
   justify-content: space-between;
   align-items: center;
   padding: 10px;
+  gap: 8px;
 }
 
 .albumName {
   font-size: 14px;
   font-weight: 500;
   margin: 0;
-}
-
-.chip {
-  background-color: var(--color-primary);
-  color: var(--color-black);
-  font-size: 12px;
-  height: 24px;
-}
-
-:root {
-  --color-black: #000000;  /* black */
-  --color-white: #ffffff;  /* white */
-  --color-primary: #1db954; /* example primary color, like QTify green */
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  color: black;
 }

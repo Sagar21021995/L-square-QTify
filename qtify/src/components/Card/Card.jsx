@@ -5,22 +5,20 @@ import { Chip } from "@mui/material";
 function Card({ image, albumName, follows }) {
   return (
     <div className={styles.card}>
-      {/* Album Image */}
-      <img src={image} alt={albumName} className={styles.albumImage} />
-
-      {/* Bottom Section */}
+      <img src={image} alt={`Album cover of ${albumName}`} className={styles.albumImage} />
       <div className={styles.cardContent}>
         <p className={styles.albumName}>{albumName}</p>
-
-        {/* Chip showing follows */}
-        <Chip 
-          label={`${follows} Follows`} 
-          className={styles.chip} 
-          size="small"
-        />
+        {follows !== undefined && (
+          <Chip 
+            label={`${follows} Follows`} 
+            size="small" 
+            sx={{ backgroundColor: 'var(--color-primary)', color: 'black', fontSize: '0.75rem' }}
+          />
+        )}
       </div>
     </div>
   );
 }
 
 export default Card;
+

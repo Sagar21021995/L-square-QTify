@@ -12,6 +12,7 @@
 .header h2 {
   font-size: 20px;
   font-weight: 600;
+  margin: 0;
 }
 
 .collapseBtn {
@@ -22,14 +23,17 @@
   cursor: pointer;
 }
 
+.collapseBtn:hover {
+  text-decoration: underline;
+}
+
 .grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
   gap: 20px;
 }
 
-:root {
-  --color-black: #000000;  /* black */
-  --color-white: #ffffff;  /* white */
-  --color-primary: #1db954; /* example primary color, like QTify green */
+.loading, .error, .empty {
+  text-align: center;
+  color: white;
 }
