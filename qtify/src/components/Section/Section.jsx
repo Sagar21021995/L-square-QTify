@@ -5,7 +5,7 @@ import styles from "./Section.module.css";
 
 function Section({ title, endpoint }) {
   const [albums, setAlbums] = useState([]);
-  const [expanded, setExpanded] = useState(false);
+  const [expanded, setExpanded] = useState(true);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 
@@ -13,8 +13,8 @@ function Section({ title, endpoint }) {
     async function fetchData() {
       try {
         const res = await axios.get(endpoint);
-        const arr = res.data;
-        setAlbums(arr.slice(0,14));
+  
+        setAlbums(res.data);
       } catch (err) {
         setError("Failed to fetch albums");
       } finally {
