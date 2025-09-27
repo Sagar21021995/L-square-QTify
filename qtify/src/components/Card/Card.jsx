@@ -4,11 +4,11 @@ import { Chip } from "@mui/material";
 
 function Card({ image, albumName, follows }) {
   return (
-    <div>
+    <div  className={styles.wrapper}>
     <div className={styles.card}>
       <img src={image} alt={`Album cover of ${albumName}`} className={styles.albumImage} />
       <div className={styles.cardContent}>
-        
+        <div>
         {follows !== undefined && (
           <Chip 
             label={`${follows} Follows`} 
@@ -16,6 +16,7 @@ function Card({ image, albumName, follows }) {
             sx={{ backgroundColor: 'var(--color-black)', color: 'white', fontSize: '0.5rem' }}
           />
         )}
+        </div>
       </div>
       
     </div>
