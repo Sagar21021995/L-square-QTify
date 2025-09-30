@@ -36,6 +36,7 @@ export default function Carousel({ albums , isSongsSection}) {
         modules={[Navigation]}
         spaceBetween={0}
         slidesPerView={7}
+        slidesPerGroup={2}
         onSwiper={(swiper) => (swiperRef.current = swiper)}
         onSlideChange={handleSlideChange}
         // breakpoints={
