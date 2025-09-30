@@ -1,4 +1,4 @@
-import React, { useRef, useState } from "react";
+import React, { useRef, useState, useEffect } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation } from "swiper/modules";
 import "swiper/css";
@@ -8,11 +8,13 @@ import Card from "../Card/Card";
 import LeftNavButton from "./LeftNavButton";
 import RightNavButton from "./RightNavButton";
 
-export default function Carousel({ albums , isSongsSection}) {
+export default function Carousel({ albums, isSongsSection }) {
   const prevRef = useRef(null);
   const nextRef = useRef(null);
   const swiperRef = useRef(null);
   const [activeIndex, setActiveIndex] = useState(0);
+
+  const slidesPerView = 7; // you can make this responsive later
 
   const handleSlideChange = (swiper) => {
     setActiveIndex(swiper.activeIndex);
@@ -28,23 +30,21 @@ export default function Carousel({ albums , isSongsSection}) {
 
   return (
     <div className="carousel-wrapper">
-      {activeIndex > 0 && <LeftNavButton onClick={goPrev} />}
-      {activeIndex < albums.length - 7 && <RightNavButton onClick={goNext} />}
-      {/* Assuming 7 slidesPerView */}
+      {/* Always render buttons, only disable when not usable */}
+      <LeftNavButton onClick={goPrev} disabled={activeIndex === 0} />
+      <RightNavButton
+        onClick={goNext}
+        disabled={activeIndex >= albums.length - slidesPerView}
+      />
 
       <Swiper
         modules={[Navigation]}
         spaceBetween={0}
-        slidesPerView={7}
-        slidesPerGroup={4}
+        slidesPerView={slidesPerView}
+        slidesPerGroup={1}
         loop={false}
         onSwiper={(swiper) => (swiperRef.current = swiper)}
         onSlideChange={handleSlideChange}
-        // breakpoints={
-        //   {340: { slidesPerView: 2 }, 
-        //    768: { slidesPerView: 4 },  
-        //   1536: { slidesPerView: 7 }
-        // }}
       >
         {albums.map((album) => (
           <SwiperSlide key={album.id}>

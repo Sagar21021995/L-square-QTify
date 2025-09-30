@@ -1,14 +1,12 @@
-
 .swiper {
   padding: 1rem 0;
 }
 
+/* Keep this if you ever fallback to Swiper’s built-in buttons */
 .swiper-button-next,
 .swiper-button-prev {
   color: var(--color-primary) !important;
 }
-
-
 
 .carousel-wrapper {
   position: relative;
@@ -46,4 +44,14 @@
 
 .carousel-nav:hover svg {
   fill: var(--color-primary);
+}
+
+/* 🔹 Disabled state (important for Cypress stability) */
+.carousel-nav:disabled {
+  cursor: not-allowed;
+  opacity: 0.4;
+}
+
+.carousel-nav:disabled svg {
+  fill: var(--color-white); /* keep it consistent */
 }
