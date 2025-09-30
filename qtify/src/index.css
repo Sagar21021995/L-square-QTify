@@ -1,21 +1,20 @@
-body {
-  margin: 0;
-  font-family: 'Poppins', sans-serif;
-  background-color: var(--color-black);
-  color: var(--color-white);
-}
-
-  
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
-}
 
 :root {
   --color-black: #121212;
+  --color-dark-gray: #181818;
+  --color-light-gray: #aaa;
   --color-white: #ffffff;
-  --color-primary: #1db954;
+  --primary-color: #34c94b; /* Spotify green */
 }
 
-*, *::before, *::after {
+* {
+  margin: 0;
+  padding: 0;
   box-sizing: border-box;
+}
+
+body {
+  background-color: var(--color-black);
+  color: var(--color-white);
+  font-family: "Roboto", sans-serif;
 }

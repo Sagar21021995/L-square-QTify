@@ -1,36 +1,14 @@
-import React, { useEffect, useState } from "react";
-import axios from "axios";
+import React, { useState } from "react";
 import Card from "../Card/Card";
 import styles from "./Section.module.css";
 import Carousel from "../Carousel/Carousel";
 
-function Section({ title, endpoint }) {
-  const [albums, setAlbums] = useState([]);
+function Section({ title, albums }) {
   const [expanded, setExpanded] = useState(false);
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState(null);
-  
 
-  useEffect(() => {
-    async function fetchData() {
-      try {
-        const res = await axios.get(endpoint);
-  
-        setAlbums(res.data);
-      } catch (err) {
-        setError("Failed to fetch albums");
-      } finally {
-        setLoading(false);
-      }
-    }
-    fetchData();
-  }, [endpoint]);
-
-  // const displayedAlbums = expanded ? albums : albums.slice(0, 7);
-
-  if (loading) return <p className={styles.loading}>Loading...</p>;
-  if (error) return <p className={styles.error}>{error}</p>;
-  if (!albums.length) return <p className={styles.empty}>No albums available</p>;
+  if (!albums || albums.length === 0) {
+    return <p className={styles.empty}>No albums available</p>;
+  }
 
   return (
     <div className={styles.section}>
@@ -44,18 +22,21 @@ function Section({ title, endpoint }) {
           {expanded ? "Collapse" : "Show All"}
         </button>
       </div>
+
       {!expanded ? (
-        <Carousel albums={albums}/>
-        
-      ):(<div className={styles.grid}>
-        {albums.map((album) => (
-          <Card key={album.id}
-            image={album.image}
-            albumName={album.title}
-            follows={album.follows} />
-        ))}
-      </div>)}
-      
+        <Carousel albums={albums} />
+      ) : (
+        <div className={styles.grid}>
+          {albums.map((album) => (
+            <Card
+              key={album.id}
+              image={album.image}
+              albumName={album.title}
+              follows={album.follows}
+            />
+          ))}
+        </div>
+      )}
     </div>
   );
 }

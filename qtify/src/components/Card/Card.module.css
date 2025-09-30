@@ -7,7 +7,6 @@
   width: 100%;
   max-width: 160px;
   aspect-ratio: 3 / 4;
-  /* height: 205px; */
   transition: all 0.3s ease;
 
 }
@@ -15,6 +14,7 @@
   display: flex;
   flex-direction: column;
   align-items: flex-start;
+  width: 160px;
 }
 
 .card:hover {
@@ -44,7 +44,6 @@
   font-size: 14px;
   font-weight: 500;
   margin: 8px 0 0 0;
-  white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
   color: white;

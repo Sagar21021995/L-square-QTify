@@ -1,0 +1,31 @@
+.section {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin: 1rem 0;
+}
+
+.tabs {
+  margin-bottom: 1rem;
+}
+
+.customTab {
+  text-transform: none;
+  font-size: 0.85rem;
+  color: var(--color-white);
+}
+
+.customTab.Mui-selected {
+  color: var(--primary-color);
+  font-weight: 600;
+}
+
+.empty {
+  color: var(--color-light-gray);
+  font-size: 0.9rem;
+  margin-top: 0.5rem;
+}
+
+.carousel-wrapper {
+  margin-top: 0.5rem;
+}

@@ -8,7 +8,7 @@ import Card from "../Card/Card";
 import LeftNavButton from "./LeftNavButton";
 import RightNavButton from "./RightNavButton";
 
-export default function Carousel({ albums }) {
+export default function Carousel({ albums , isSongsSection}) {
   const prevRef = useRef(null);
   const nextRef = useRef(null);
   const swiperRef = useRef(null);
@@ -38,6 +38,11 @@ export default function Carousel({ albums }) {
         slidesPerView={7}
         onSwiper={(swiper) => (swiperRef.current = swiper)}
         onSlideChange={handleSlideChange}
+        // breakpoints={
+        //   {340: { slidesPerView: 2 }, 
+        //    768: { slidesPerView: 4 },  
+        //   1536: { slidesPerView: 7 }
+        // }}
       >
         {albums.map((album) => (
           <SwiperSlide key={album.id}>
@@ -45,6 +50,8 @@ export default function Carousel({ albums }) {
               image={album.image}
               albumName={album.title}
               follows={album.follows}
+              likes={album.likes}
+              isSongsSection={isSongsSection}
             />
           </SwiperSlide>
         ))}

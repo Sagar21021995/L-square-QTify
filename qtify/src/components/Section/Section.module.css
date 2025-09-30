@@ -1,25 +1,20 @@
 .section {
-  margin: 20px 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
 }
 
 .header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 20px;
-}
-
-.header h2 {
-  font-size: 25px;
-  font-weight: 600;
-  margin: 0px;
 }
 
 .collapseBtn {
-  background: transparent;
+  background: none;
   border: none;
-  color: var(--color-primary);
-  font-weight: 700;
+  color: var(--primary-color);
+  font-size: 0.9rem;
   cursor: pointer;
 }
 
@@ -29,14 +24,14 @@
 
 .grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(170px, 1fr));
-  gap: 10px;
-  padding: 0 10px;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  gap: 1rem;
 }
 
-.loading, .error, .empty {
-  text-align: center;
-  color: white;
-  margin: 40px 0;
-  font-size: 18px;
+.loading,
+.error,
+.empty {
+  font-size: 0.9rem;
+  color: var(--color-light-gray);
+  margin: 1rem 0;
 }
